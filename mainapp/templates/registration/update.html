@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Profile {% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <hr>
+    <h2>Profile Management</h2>
+    <br>
+    {% for message in messages %}
+    
+    <div class="alert alert-success">
+        <a class="close" href="{% url 'showUserProfile' %}" data-dismiss="alert">×</a>
+           {{ message }}
+    </div>
+
+    {% endfor %}
+    <form method="post" action="{% url 'editUserProfile' %}">
+      {% csrf_token %}
+      {{ form_user.as_p }}
+      <button class="btn btn-primary" type="submit">Update Profile</button>
+    </form>
+    <br>
+    <hr>
+    <h2>Password Management</h2>
+    <br>
+    <form method="post" action="{% url 'changePassword' %}">
+        {% csrf_token %}
+        {{ form_password.as_p }}
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+</div>
+{% endblock %}

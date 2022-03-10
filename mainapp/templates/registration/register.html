@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+<div class="container py-5">
+	<h2>Register</h2>
+  {% for message in messages %}
+    
+    <div class="alert alert-success">
+        <a class="close" href="{% url 'register' %}" data-dismiss="alert">×</a>
+           {{ message }}
+    </div>
+
+  {% endfor %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+</div>
+{% endblock %}
