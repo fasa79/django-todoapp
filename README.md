@@ -7,7 +7,7 @@ This project is developed as an exercise during TM R&D Internship. Link for the 
 
 ### Running the project locally
 
-First, clone the repository to the local machine:
+First, clone the repository to the local machine: <br />
 `git clone https://github.com/fasa79/django-todoapp.git`
 
 Then install the requirements
